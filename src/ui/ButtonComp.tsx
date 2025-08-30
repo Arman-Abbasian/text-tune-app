@@ -9,7 +9,7 @@ type ButtonProps = {
   className: string
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
-const Button = (props: ButtonProps) => {
+const ButtonComp = (props: ButtonProps) => {
   const {
     onsubmit,
     loading,
@@ -34,4 +34,4 @@ const Button = (props: ButtonProps) => {
     </button>
   )
 }
-export default Button
+export default ButtonComp

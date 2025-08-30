@@ -1,6 +1,7 @@
 'use client'
 import ImageComp from '@/ui/ImageComp'
 import { useState, useRef } from 'react'
+import AudioPlayer from './AudioPlayer'
 
 export default function AudioRecorder() {
   const [audioUrl, setAudioUrl] = useState<string | null>(null)
@@ -69,24 +70,24 @@ export default function AudioRecorder() {
   }
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-4 ">
       {isRecording.current ? (
         <button
           onClick={stopRecording}
-          className="bg-danger animate-pulse text-white w-48 h-48 p-4 rounded-full"
+          className="bg-danger animate-pulse text-white w-48 h-48 p-4 rounded-full cursor-pointer shadow-2xl drop-shadow-2xl"
         >
           <ImageComp src={'/images/microphone.png'} alt="mic" />
         </button>
       ) : (
         <button
           onClick={startRecording}
-          className="bg-primary-300 text-white w-48 h-48 p-4 rounded-full"
+          className="bg-primary-300 text-white w-48 h-48 p-4 rounded-full cursor-pointer shadow-2xl drop-shadow-2xl"
         >
           <ImageComp src={'/images/microphone.png'} alt="mic" />
         </button>
       )}
 
-      {audioUrl && <audio controls src={audioUrl} className="mt-4" />}
+      {audioUrl && <AudioPlayer audioUrl={audioUrl}/>}
     </div>
   )
 }

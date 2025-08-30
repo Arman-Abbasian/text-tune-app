@@ -1,7 +1,7 @@
 'use client'
 
 import FormInput from '@/components/FormInput'
-import Button from '@/ui/ButtonComp'
+import ButtonComp from '@/ui/ButtonComp'
 import { UserCircleIcon } from '@heroicons/react/24/outline'
 import { useForm } from 'react-hook-form'
 
@@ -35,7 +35,7 @@ export default function LoginForm() {
           placeholder="رمز عبور"
           showTogglePassword
         />
-        <Button
+        <ButtonComp
           text="ورود"
           isFormButton
           canClick
