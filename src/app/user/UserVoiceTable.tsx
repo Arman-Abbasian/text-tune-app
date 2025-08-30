@@ -1,14 +1,14 @@
 import { Table } from "@chakra-ui/react"
 
-const TextVoices = () => {
+const UserVoiceTable = () => {
   return (
-    <Table.ScrollArea borderWidth="1px" maxW="full">
+    <Table.ScrollArea borderWidth="1px" maxW="full" className="rounded-2xl overflow-hidden">
       <Table.Root size="lg" variant="outline">
         <Table.Header className="!bg-primary-700">
           <Table.Row>
             <Table.ColumnHeader  >متن</Table.ColumnHeader>
             <Table.ColumnHeader textAlign='center' >عناوین</Table.ColumnHeader>
-            <Table.ColumnHeader textAlign="center" className="!bg-red-500">تاریخ</Table.ColumnHeader>
+            <Table.ColumnHeader textAlign="center">تاریخ</Table.ColumnHeader>
             <Table.ColumnHeader textAlign="center">
               وضعیت
             </Table.ColumnHeader>
@@ -21,7 +21,7 @@ const TextVoices = () => {
           {items.map((item) => (
             <Table.Row key={item.id} className="!text-primary-900">
               <Table.Cell textAlign='start'>{item.text}</Table.Cell>
-              <Table.Cell textAlign='center'>{item.tags.map(item=><p className="m-2 inline-block ">{item}</p>)}</Table.Cell>
+              <Table.Cell textAlign='center'>{item.tags.map(item=><p className="m-2 inline-block" key={item}>{item}</p>)}</Table.Cell>
               <Table.Cell textAlign='center'>{item.date}</Table.Cell>
               <Table.Cell textAlign='center'>{item.condition}</Table.Cell>
               <Table.Cell textAlign='end'>+</Table.Cell>
@@ -32,7 +32,7 @@ const TextVoices = () => {
     </Table.ScrollArea>
   )
 }
-export default TextVoices
+export default UserVoiceTable
 
 const items = [
   { id: 1,text:'این متن تستی است و جهت خواندن از آن استفاده می شود', tags:['a','b'], date: "1404/10/10", condition: 'false' },

@@ -1,8 +1,8 @@
-import AudioRecorder from '@/components/AudioRecorder'
-import TextVoices from './TextVoices'
+import UserVoiceTable from './UserVoiceTable'
+
 
 export default function Page() {
   return (
-   <div><TextVoices /></div>
+   <div><UserVoiceTable /></div>
   )
 }
