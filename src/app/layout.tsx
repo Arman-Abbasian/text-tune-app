@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import localFont from 'next/font/local'
+import { Provider } from '@/components/ui/provider'
 
 const yekanBakh = localFont({
   src: [
@@ -61,7 +62,9 @@ export default function RootLayout({
     <html lang="fa" className={yekanBakh.className}>
       <body className={`antialiased`}>
         <div className="p-4 h-full bg-[radial-gradient(circle,_#fbbf24,_#0f172a)]">
+          <Provider>
           {children}
+          </Provider>
         </div>
       </body>
     </html>

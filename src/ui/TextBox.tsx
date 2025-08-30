@@ -1,10 +1,11 @@
 import { ReactNode } from "react"
 
 type TextBoxPropsType={
-    children:ReactNode
+    children:ReactNode;
+    className?:string;
 }
 
 export default function TextBox(props:TextBoxPropsType){
-    const {children}=props
-    return <p className='w-fit p-4 rounded-2xl text-center'>{children}</p>
+    const {children,className}=props
+    return <p className={`w-fit !p-4 rounded-lg cursor-pointer ${className}`}>{children}</p>
 }
