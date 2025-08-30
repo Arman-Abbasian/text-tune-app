@@ -1,4 +1,5 @@
 import ImageComp from "@/ui/ImageComp";
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import { useEffect, useRef, useState } from "react";
 
 
@@ -46,7 +47,7 @@ export default function AudioPlayer(props:AudioPlayerPropsType) {
        
         <a
           href={audioUrl} download>
-          <ImageComp alt="pause" src="/images/download.png" className="w-10 h-10" />
+          <ArrowDownTrayIcon className="w-10 text-amber-600" />
         </a>
                
         <button onClick={togglePlay} className="cursor-pointer block h-full">
