@@ -2,7 +2,7 @@
 
 import FormInput from '@/components/FormInput'
 import ButtonComp from '@/ui/ButtonComp'
-import { UserCircleIcon } from '@heroicons/react/24/outline'
+import { UserIcon } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 
 type LoginFormPropsType = {
@@ -26,7 +26,7 @@ export default function LoginForm() {
           name="username"
           register={register}
           placeholder="نام کاربری"
-          icon={<UserCircleIcon className="icon-small" />}
+          icon={<UserIcon className="icon-small" />}
         />
         <FormInput
           name="password"

@@ -1,4 +1,4 @@
-import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline'
+import { Eye, EyeClosedIcon } from 'lucide-react'
 import React, { useState } from 'react'
 import type { FieldError, UseFormRegister } from 'react-hook-form'
 
@@ -65,9 +65,9 @@ export default function FormInput({
             onClick={() => setShowPassword((prev) => !prev)}
           >
             {showPassword ? (
-              <EyeIcon className="icon-small" />
+              <Eye className="icon-small" />
             ) : (
-              <EyeSlashIcon className="icon-small" />
+              <EyeClosedIcon className="icon-small" />
             )}
           </button>
         )}

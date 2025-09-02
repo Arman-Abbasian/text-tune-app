@@ -1,10 +1,12 @@
 'use client'
+import TextInputComp from '@/components/TextInputComp'
 import { Label } from '@/components/ui/label'
 import { Switch } from '@/components/ui/switch'
 import SelectComp from '@/ui/SelectComp'
 import TextBox from '@/ui/TextBox'
 import { truncateText } from '@/utils/TruncateText'
 import DatePicker from 'react-multi-date-picker'
+import AdminTextVoicesTable from './AdminTextVoicesTable'
 
 const options = [
   { name: 'همه', value: '0' },
@@ -32,6 +34,11 @@ export default function Page() {
             <DatePicker placeholder="از تاریخ" />
             <DatePicker placeholder="تا تاریخ" />
           </div>
+          <TextInputComp
+            name="search"
+            onChange={() => console.log()}
+            value="search"
+          />
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => {
             return (
               <TextBox key={item} className="bg-primary-100 text-primary-900">
@@ -40,15 +47,7 @@ export default function Page() {
             )
           })}
         </div>
-        <div className="flex flex-col gap-4 flex-1">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => {
-            return (
-              <TextBox key={item} className="bg-primary-100 text-primary-900">
-                {text}
-              </TextBox>
-            )
-          })}
-        </div>
+        <AdminTextVoicesTable />
       </div>
     </div>
   )
