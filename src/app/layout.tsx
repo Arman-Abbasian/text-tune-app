@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="fa" className={yekanBakh.className}>
       <body className={`antialiased`}>
-        <div className="p-4 h-full overflow-auto bg-[radial-gradient(circle,_#fbbf24,_#0f172a)] text-secondary-900">
+        <div className="p-4 h-full bg-[radial-gradient(circle,_#fbbf24,_#0f172a)] text-secondary-900">
           {children}
         </div>
       </body>

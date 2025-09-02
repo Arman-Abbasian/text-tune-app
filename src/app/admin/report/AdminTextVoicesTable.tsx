@@ -10,23 +10,31 @@ import { Eye, ReceiptText } from 'lucide-react'
 
 const AdminTextVoicesTable = () => {
   return (
-    <Table className="w-3xl rounded-lg overflow-hidden">
+    <Table className="rounded-lg overflow-hidden shadow-2xl drop-shadow-2xl">
       <TableHeader className="bg-primary-700">
         <TableRow>
-          <TableHead className="text-right text-white">نام کاربر</TableHead>
-          <TableHead className="text-center text-white">تاریخ ضبط</TableHead>
-          <TableHead className="text-center text-white">فایل صوتی</TableHead>
-          <TableHead className="text-center text-white">یادداشت</TableHead>
-          <TableHead className="text-center text-white">وضعیت</TableHead>
-          <TableHead className="text-left text-white">جزییات</TableHead>
+          <TableHead className="text-right text-primary-300">
+            نام کاربر
+          </TableHead>
+          <TableHead className="text-center text-primary-300">
+            تاریخ ضبط
+          </TableHead>
+          <TableHead className="text-center text-primary-300">
+            فایل صوتی
+          </TableHead>
+          <TableHead className="text-center text-primary-300">
+            یادداشت
+          </TableHead>
+          <TableHead className="text-center text-primary-300">وضعیت</TableHead>
+          <TableHead className="text-left text-primary-300">جزییات</TableHead>
         </TableRow>
       </TableHeader>
-      <TableBody className="text-primary-900 bg-secondary-500">
+      <TableBody className="text-primary-900 bg-primary-300">
         {items.length === 0 ? (
           <p>متنی جهت خواندن موجود نیست</p>
         ) : (
           items.map((item) => (
-            <TableRow key={item.id} className="text-primary-900">
+            <TableRow key={item.id} className="text-primary-700">
               <TableCell className="text-right">{item.username}</TableCell>
               <TableCell className="text-center">{item.date}</TableCell>
               <TableCell className="text-center">{item.link}</TableCell>
