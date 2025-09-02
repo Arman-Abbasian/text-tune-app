@@ -15,13 +15,14 @@ type OptionType = {
 
 type SelectCompPropsType = {
   options: OptionType[]
+  className?: string
 }
 
 export default function SelectComp(props: SelectCompPropsType) {
-  const { options } = props
+  const { options, className } = props
   return (
     <Select>
-      <SelectTrigger className="w-fit bg-primary-300">
+      <SelectTrigger className={`bg-primary-100 py-6 ${className}`}>
         <SelectValue placeholder="همه" />
       </SelectTrigger>
       <SelectContent>

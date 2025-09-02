@@ -6,8 +6,10 @@ export function TextList() {
   return (
     <div className="flex flex-col h-full">
       <div className="mb-10">
+        <p className="text-primary-300 mb-2">فیلتر</p>
         <Filters />
       </div>
+      <p className="text-primary-300 mb-2">لیست</p>
       <div className="flex flex-col flex-1 gap-4 overflow-y-auto">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => {
           return <TextItem key={item} />

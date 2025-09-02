@@ -16,7 +16,7 @@ function TextInputComp(props: TextInputCompPropsType) {
 
   return (
     <div
-      className={`flex justify-between items-center gap-2 px-5 py-3 border rounded-2xl bg-primary-100 border-secondary-300 ${className}`}
+      className={`flex justify-between items-center gap-2 px-2 py-1 border rounded-lg bg-primary-100 border-secondary-300 w-full ${className}`}
     >
       <input
         className="p-2 focus:outline-none hove:outline-none"
@@ -25,7 +25,7 @@ function TextInputComp(props: TextInputCompPropsType) {
         name={name}
         {...restProps}
       />
-      <span className="text-primary-700 text-lg">{icon}</span>
+      {icon && <span className="text-primary-700 text-lg">{icon}</span>}
     </div>
   )
 }
