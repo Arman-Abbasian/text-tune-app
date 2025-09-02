@@ -1,11 +1,14 @@
-import AudioRecorder from '@/components/AudioRecorder'
+'use client'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
 export default function Home() {
   return (
-    <div className="text-primary-500 flex flex-col items-center justify-center">
-     <div className='flex justify-center'> <p className='bg-secondary-300 w-fit p-4 rounded-2xl text-center text-secondary-900 mb-10'>متن ساختگی است و  جهت تست خوانده شود</p></div>
-      <AudioRecorder />
-      
+    <div className="flex flex-col items-center justify-center text-secondary-700">
+      <p className=" text-2xl font-bold mb-10">
+        به نرم افزار اصلاح صوت خوش آمدید
+      </p>
+      <p>منتظر بمانید...</p>
+      <DotLottieReact src="json/loading.json" loop autoplay className="h-96" />
     </div>
   )
 }
