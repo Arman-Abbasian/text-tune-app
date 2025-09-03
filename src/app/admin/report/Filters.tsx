@@ -28,16 +28,16 @@ export default function Filters() {
         />
       </div>
       <div className="flex !items-center space-x-2">
-        <Label htmlFor="airplane-mode" className="text-primary-300">
+        <Label htmlFor="airplane-mode" className="text-primary-500">
           تاریخ صوت
         </Label>
         <div dir="ltr">
           <Switch
             id="airplane-mode"
-            className="data-[state=checked]:bg-primary-300 data-[state=unchecked]:bg-primary-300 border-0"
+            className="data-[state=checked]:bg-primary-500 data-[state=unchecked]:bg-primary-500 border-0"
           />
         </div>
-        <Label htmlFor="airplane-mode" className="text-primary-300">
+        <Label htmlFor="airplane-mode" className="text-primary-500">
           تاریخ متن
         </Label>
       </div>

@@ -214,3 +214,8 @@ body {
     @apply transition-all duration-300 ease-in-out;
   }
 }
+
+textarea {
+  resize: none;
+  overflow: auto;
+}
