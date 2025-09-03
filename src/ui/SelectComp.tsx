@@ -22,14 +22,20 @@ export default function SelectComp(props: SelectCompPropsType) {
   const { options, className } = props
   return (
     <Select>
-      <SelectTrigger className={`bg-primary-100 py-6 ${className}`}>
-        <SelectValue placeholder="همه" />
+      <SelectTrigger
+        className={`bg-primary-100 py-6 text-primary-700 ${className}`}
+      >
+        <SelectValue placeholder="همه" className="!text-primary-700" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
           {options.map((option, index) => {
             return (
-              <SelectItem key={index} value={option.value}>
+              <SelectItem
+                key={index}
+                value={option.value}
+                className="text-primary-700"
+              >
                 {option.name}
               </SelectItem>
             )

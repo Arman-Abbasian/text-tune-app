@@ -11,7 +11,7 @@ import {
 import ButtonComp from '@/ui/ButtonComp'
 import ModalComp from '@/ui/ModalComp'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
-import { CircleCheckBig, CircleX, Eye, ReceiptText } from 'lucide-react'
+import { CircleCheckBig, CircleX, Eye } from 'lucide-react'
 import { useState } from 'react'
 
 const AdminTextVoicesTable = () => {

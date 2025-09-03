@@ -1,3 +1,4 @@
+'use client'
 import {
   Table,
   TableBody,
@@ -6,34 +7,45 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import ImageComp from '@/ui/ImageComp'
+import TagComp from '@/ui/TagComp'
 
 const UserVoiceTable = () => {
   return (
-    <Table className="w-3xl rounded-lg overflow-hidden">
+    <Table className="rounded-lg overflow-hidden">
       <TableHeader className="bg-primary-700">
         <TableRow>
-          <TableHead className="text-right text-white">متن</TableHead>
-          <TableHead className="text-center text-white">عناوین</TableHead>
-          <TableHead className="text-center text-white">وضعیت</TableHead>
-          <TableHead className="text-left text-white">خواندن</TableHead>
+          <TableHead className="text-right text-primary-300">متن</TableHead>
+          <TableHead className="text-center text-primary-300 max-w-64 md:max-w-max">
+            عناوین
+          </TableHead>
+          <TableHead className="text-center text-primary-300">وضعیت</TableHead>
+          <TableHead className="text-left text-primary-300">خواندن</TableHead>
         </TableRow>
       </TableHeader>
-      <TableBody className="text-primary-900 bg-secondary-500">
+      <TableBody className="bg-primary-100">
         {items.length === 0 ? (
           <p>متنی جهت خواندن موجود نیست</p>
         ) : (
           items.map((item) => (
-            <TableRow key={item.id} className="text-primary-900">
+            <TableRow key={item.id} className="text-primary-700">
               <TableCell className="text-right">{item.text}</TableCell>
-              <TableCell className="text-center">
+              <TableCell className="flex justify-center items-center flex-wrap max-w-64 md:max-w-full gap-3">
                 {item.tags.map((tag) => (
-                  <span key={tag} className="m-2 inline-block">
-                    {tag}
-                  </span>
+                  <TagComp key={tag}>{tag}</TagComp>
                 ))}
               </TableCell>
               <TableCell className="text-center">{item.condition}</TableCell>
-              <TableCell className="text-left">+</TableCell>
+              <TableCell className="text-left">
+                <button
+                  onClick={() => {
+                    console.log('yes')
+                  }}
+                  className="w-10 h-10 cursor-pointer"
+                >
+                  <ImageComp src={'/images/microphone.png'} alt="mic" />
+                </button>
+              </TableCell>
             </TableRow>
           ))
         )}
@@ -62,7 +74,7 @@ const items = [
   {
     id: 3,
     text: 'این متن تستی است و جهت خواندن از آن استفاده می شود',
-    tags: ['a', 'b'],
+    tags: ['adrrrred', 'دیزیشتیرین خون', 'adrrrdred', 'دیزیشیتیرین خون'],
     date: '1404/10/10',
     condition: 'pending',
   },
@@ -76,7 +88,7 @@ const items = [
   {
     id: 5,
     text: 'این متن تستی است و جهت خواندن از آن استفاده می شود',
-    tags: ['a', 'b'],
+    tags: ['adrrrred', 'دیزیشتیرین خون'],
     date: '1404/10/10',
     condition: 'pending',
   },

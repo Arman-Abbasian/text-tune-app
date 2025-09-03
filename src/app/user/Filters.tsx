@@ -15,14 +15,15 @@ export default function Filters() {
     setFilters({ ...filters, search: val })
   }
   return (
-    <div>
-      <SelectComp options={options} />
+    <div className="flex items-center gap-4">
+      <SelectComp options={options} className="w-36" />
       <TextInputComp
         placeholder="جستجوی متن"
         name="search"
         onChange={changeHandler}
         value={filters.search}
-        icon={<SearchIcon />}
+        icon={<SearchIcon className="!text-sm" />}
+        className="max-w-md"
       />
     </div>
   )
