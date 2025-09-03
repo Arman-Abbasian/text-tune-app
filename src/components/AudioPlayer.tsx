@@ -1,5 +1,7 @@
+import ButtonComp from '@/ui/ButtonComp'
 import ImageComp from '@/ui/ImageComp'
-import { ArrowDown } from 'lucide-react'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+import { ArrowDown, Download } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
 type AudioPlayerPropsType = {
@@ -38,12 +40,16 @@ export default function AudioPlayer(props: AudioPlayerPropsType) {
   }
 
   return (
-    <div className="max-w-xs mx-auto bg-primary-100 rounded-2xl shadow-md drop-shadow-2xl p-4 flex flex-col items-center gap-4 w-full">
-      <ImageComp alt="pause" src="/images/headphone.png" className="w-20" />
-
-      <div className="flex justify-between items-center w-full  gap-4">
+    <div className="bg-primary-100 rounded-lg shadow-2xl drop-shadow-2xl p-2 flex flex-col items-center gap-2 w-64">
+      <DotLottieReact
+        src="/json/play.json"
+        loop
+        autoplay
+        className="w-full h-14 flex justify-center"
+      />
+      <div className="flex justify-between items-center w-full gap-4">
         <a href={audioUrl} download>
-          <ArrowDown className="w-10 text-amber-600" />
+          <Download className="w-10 text-primary-700" />
         </a>
 
         <button onClick={togglePlay} className="cursor-pointer block h-full">
@@ -62,6 +68,12 @@ export default function AudioPlayer(props: AudioPlayerPropsType) {
           )}
         </button>
       </div>
+      <ButtonComp
+        text="تایید و ارسال"
+        isFormButton
+        canClick
+        className="bg-secondary-700 w-full"
+      />
 
       {/* Hidden audio element */}
       <audio ref={audioRef} src={audioUrl} />

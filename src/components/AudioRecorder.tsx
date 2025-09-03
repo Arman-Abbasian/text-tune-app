@@ -5,34 +5,31 @@ import ButtonComp from '@/ui/ButtonComp'
 import { useAudioRecorder } from '@/hooks/useAudioRecorder'
 
 export default function AudioRecorder() {
-  const {audioUrl,
-    isRecording,
-    stopRecording,
-    startRecording,}=useAudioRecorder()
+  const { audioUrl, isRecording, stopRecording, startRecording } =
+    useAudioRecorder()
 
   return (
     <div className="flex flex-col items-center gap-4 ">
       {isRecording.current ? (
         <button
           onClick={stopRecording}
-          className="bg-danger animate-pulse text-white w-48 h-48 p-4 rounded-full cursor-pointer shadow-2xl drop-shadow-2xl"
+          className="bg-danger animate-pulse text-white w-24 h-24 p-4 rounded-full cursor-pointer shadow-2xl drop-shadow-2xl"
         >
           <ImageComp src={'/images/microphone.png'} alt="mic" />
         </button>
       ) : (
         <button
           onClick={startRecording}
-          className="bg-primary-300 text-white w-48 h-48 p-4 rounded-full cursor-pointer shadow-2xl drop-shadow-2xl"
+          className="bg-primary-300 text-white w-24 h-24 p-4 rounded-full cursor-pointer shadow-2xl drop-shadow-2xl"
         >
           <ImageComp src={'/images/microphone.png'} alt="mic" />
         </button>
       )}
-
-      {audioUrl && <AudioPlayer audioUrl={audioUrl}/>}
-      {audioUrl && <ButtonComp text="تایید و ارسال"
-          isFormButton
-          canClick
-          className="bg-secondary-700 mt-5"  />}
+      {audioUrl && (
+        <div className="flex flex-col gap-2">
+          <AudioPlayer audioUrl={audioUrl} />
+        </div>
+      )}
     </div>
   )
 }
