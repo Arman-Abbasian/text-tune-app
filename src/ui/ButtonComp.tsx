@@ -2,7 +2,7 @@ import BeatLoaderComp from './BeatLoaderComp'
 
 type ButtonProps = {
   onsubmit?: () => void
-  loading?: Boolean
+  loading?: boolean
   text: string
   isFormButton?: boolean
   canClick?: boolean

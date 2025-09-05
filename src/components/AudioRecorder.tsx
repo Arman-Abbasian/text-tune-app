@@ -1,7 +1,6 @@
 'use client'
 import ImageComp from '@/ui/ImageComp'
 import AudioPlayer from './AudioPlayer'
-import ButtonComp from '@/ui/ButtonComp'
 import { useAudioRecorder } from '@/hooks/useAudioRecorder'
 
 export default function AudioRecorder() {

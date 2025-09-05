@@ -1,8 +1,8 @@
 'use client'
 
-import FormInput from '@/components/FormInput'
+import TextInputComp from '@/components/TextInputComp'
 import ButtonComp from '@/ui/ButtonComp'
-import { UserIcon } from 'lucide-react'
+import { Eye, UserIcon } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 
 type LoginFormPropsType = {
@@ -22,18 +22,22 @@ export default function LoginForm() {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-6 w-full"
       >
-        <FormInput
+        <TextInputComp
           name="username"
-          register={register}
+          onChange={() => console.log()}
+          value=""
           placeholder="نام کاربری"
+          className="flex-1"
           icon={<UserIcon className="icon-small" />}
         />
-        <FormInput
+
+        <TextInputComp
           name="password"
-          register={register}
-          type="password"
+          onChange={() => console.log()}
+          value=""
           placeholder="رمز عبور"
-          showTogglePassword
+          className="flex-1"
+          icon={<Eye className="icon-small" />}
         />
         <ButtonComp
           text="ورود"

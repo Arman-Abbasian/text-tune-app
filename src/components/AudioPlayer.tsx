@@ -1,7 +1,7 @@
 import ButtonComp from '@/ui/ButtonComp'
 import ImageComp from '@/ui/ImageComp'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
-import { ArrowDown, Download } from 'lucide-react'
+import { Download } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
 type AudioPlayerPropsType = {

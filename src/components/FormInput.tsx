@@ -1,6 +1,6 @@
 import { Eye, EyeClosedIcon } from 'lucide-react'
 import React, { useState } from 'react'
-import type { FieldError, UseFormRegister } from 'react-hook-form'
+import type { FieldError, FieldValues, UseFormRegister } from 'react-hook-form'
 
 type InputType = 'text' | 'number' | 'password' | 'email' | 'tel'
 
@@ -10,7 +10,7 @@ interface FormInputProps {
   placeholder?: string
   type?: InputType
   icon?: React.ReactNode
-  register: UseFormRegister<any>
+  register: UseFormRegister<FieldValues>
   error?: FieldError
   className?: string
   showTogglePassword?: boolean
