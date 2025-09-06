@@ -22,23 +22,28 @@ export default function Filters() {
   const [filters, setFilters] = useState({
     type: "0",
     search: "",
-    isDateType: 0,
+    isDateType: false,
     startDate: null,
     endDate: null,
   });
 
   const changeHandler = (e: React.ChangeEvent<any>) => {
-    console.log(e);
     setFilters({ ...filters, [e.target.name]: e.target.value });
   };
+
   const changeSelectHandler = (e: any, name: string) => {
     setFilters({ ...filters, [name]: e });
   };
+
   const changeDateHandler = (date: any, name: string) => {
     const momentFromDate = moment(date.toDate()).format("jYYYY/jMM/jDD");
     setFilters({ ...filters, [name]: momentFromDate });
   };
-  console.log(filters);
+
+  const changeSwitchHandler = (e: any, name: string) => {
+    setFilters({ ...filters, [name]: e });
+  };
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex  items-center gap-4">
@@ -66,8 +71,10 @@ export default function Filters() {
             id="airplane-mode"
             className="data-[state=checked]:bg-primary-500 data-[state=unchecked]:bg-primary-500 border-0"
             name="isDateType"
-            value={filters.isDateType}
-            onChange={changeHandler}
+            checked={filters.isDateType}
+            onCheckedChange={(checked) =>
+              changeSwitchHandler(checked, "isDateType")
+            }
           />
         </div>
         <Label htmlFor="airplane-mode" className="text-primary-500">
