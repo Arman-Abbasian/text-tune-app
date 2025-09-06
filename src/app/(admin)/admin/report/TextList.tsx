@@ -1,7 +1,32 @@
-import React from 'react'
-import Filters from './Filters'
-import TagComp from '@/ui/TagComp'
-
+import React from "react";
+import Filters from "./Filters";
+import TagComp from "@/ui/TagComp";
+const list = [
+  {
+    text: "متنی که توسط ادمین جهت خواندن کاربران اضافه شده است",
+    tags: ["تگ 1", "تگ 2", "تگ 3", "تگ 4"],
+  },
+  {
+    text: "متنی که توسط ادمین جهت خواندن کاربران اضافه شده است",
+    tags: ["تگ 1", "تگ 2", "تگ 3", "تگ 4"],
+  },
+  {
+    text: "متنی که توسط ادمین جهت خواندن کاربران اضافه شده است",
+    tags: ["تگ 1", "تگ 2", "تگ 3", "تگ 4"],
+  },
+  {
+    text: "متنی که توسط ادمین جهت خواندن کاربران اضافه شده است",
+    tags: ["تگ 1", "تگ 2", "تگ 3", "تگ 4"],
+  },
+  {
+    text: "متنی که توسط ادمین جهت خواندن کاربران اضافه شده است",
+    tags: ["تگ 1", "تگ 2", "تگ 3", "تگ 4"],
+  },
+  {
+    text: "متنی که توسط ادمین جهت خواندن کاربران اضافه شده است",
+    tags: ["تگ 1", "تگ 2", "تگ 3", "تگ 4"],
+  },
+];
 export function TextList() {
   return (
     <div className="flex flex-col h-full">
@@ -11,26 +36,29 @@ export function TextList() {
       </div>
       <p className="text-primary-500 mb-2">لیست</p>
       <div className="flex flex-col flex-1 gap-4 overflow-y-auto">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => {
-          return <TextItem key={item} />
+        {list.map((item, index) => {
+          return <TextItem key={index} text={item.text} tags={item.tags} />;
         })}
       </div>
     </div>
-  )
+  );
 }
 
-function TextItem() {
+type TextItemPropsType = {
+  text: string;
+  tags: string[];
+};
+function TextItem(props: TextItemPropsType) {
+  const { text, tags } = props;
+
   return (
     <div className="flex flex-col gap-4 w-full bg-primary-100 text-primary-700 rounded-lg p-4">
-      <p>
-        متن زیر یک متن طولانی است که جهت تست این قسمت مورد استفاده قرار گرفته
-        است
-      </p>
+      <p>{text}</p>
       <div className="flex items-center gap-2 flex-wrap">
-        {[1, 2, 3, 4, 5, 6].map((item) => {
-          return <TagComp key={item}>مراقبت</TagComp>
+        {tags.map((item) => {
+          return <TagComp key={item}>{item}</TagComp>;
         })}
       </div>
     </div>
-  )
+  );
 }

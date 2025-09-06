@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -22,7 +22,6 @@
     transform: translateY(200px);
   }
 }
-
 
 @keyframes floatXPlus {
   0%,
@@ -67,12 +66,12 @@
   --color-danger: var(--danger);
   --color-success: var(--success);
 
-  --font-family-iran: 'Yekan Bakh', system-ui, -apple-system, sans-serif;
+  --font-family-iran: "Yekan Bakh", system-ui, -apple-system, sans-serif;
   --font-family-system: system-ui, -apple-system, sans-serif;
 
   --animate-floatYMinus: floatYMinus 40s ease-in-out infinite;
   --animate-floatXPlus: floatXPlus 30s ease-in-out infinite;
-   --animate-floatYPlus: floatYPlus 40s ease-in-out infinite;
+  --animate-floatYPlus: floatYPlus 40s ease-in-out infinite;
   --animate-floatXMinus: floatXMinus 30s ease-in-out infinite;
 
   --spacing-15: 3.75rem;
@@ -241,4 +240,27 @@ body {
 textarea {
   resize: none;
   overflow: auto;
+}
+/* -----------scrollbar---------------- */
+/* Track */
+::-webkit-scrollbar-track {
+  background: inherit;
+  border-radius: 8px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-500);
+  border-radius: 8px;
+}
+
+/* Thumb hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-700);
 }
