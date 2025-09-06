@@ -1,4 +1,4 @@
-'use client'
+
 import {
   Table,
   TableBody,
@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/table'
 import ImageComp from '@/ui/ImageComp'
 import TagComp from '@/ui/TagComp'
+import Link from 'next/link'
 
 const UserVoiceTable = () => {
   return (
@@ -37,14 +38,11 @@ const UserVoiceTable = () => {
               </TableCell>
               <TableCell className="text-center">{item.condition}</TableCell>
               <TableCell className="text-left">
-                <button
-                  onClick={() => {
-                    console.log('yes')
-                  }}
-                  className="w-10 h-10 cursor-pointer"
+                <Link
+                  href={'user/voice'}
                 >
                   <ImageComp src={'/images/microphone.png'} alt="mic" />
-                </button>
+                </Link>
               </TableCell>
             </TableRow>
           ))

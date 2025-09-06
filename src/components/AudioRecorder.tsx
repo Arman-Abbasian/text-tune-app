@@ -8,7 +8,7 @@ export default function AudioRecorder() {
     useAudioRecorder()
 
   return (
-    <div className="flex flex-col items-center gap-4 ">
+    <div className="flex flex-col items-center gap-4">
       {isRecording.current ? (
         <button
           onClick={stopRecording}

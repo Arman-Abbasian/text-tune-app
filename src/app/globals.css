@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@keyframes floatY {
+@keyframes floatYMinus {
   0%,
   100% {
     transform: translateY(0);
@@ -13,13 +13,34 @@
   }
 }
 
-@keyframes floatX {
+@keyframes floatYPlus {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(200px);
+  }
+}
+
+
+@keyframes floatXPlus {
   0%,
   100% {
     transform: translateX(0);
   }
   50% {
     transform: translateX(200px);
+  }
+}
+
+@keyframes floatXMinus {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-200px);
   }
 }
 
@@ -49,8 +70,10 @@
   --font-family-iran: 'Yekan Bakh', system-ui, -apple-system, sans-serif;
   --font-family-system: system-ui, -apple-system, sans-serif;
 
-  --animate-floatY: floatY 40s ease-in-out infinite;
-  --animate-floatX: floatX 30s ease-in-out infinite;
+  --animate-floatYMinus: floatYMinus 40s ease-in-out infinite;
+  --animate-floatXPlus: floatXPlus 30s ease-in-out infinite;
+   --animate-floatYPlus: floatYPlus 40s ease-in-out infinite;
+  --animate-floatXMinus: floatXMinus 30s ease-in-out infinite;
 
   --spacing-15: 3.75rem;
   --spacing-66: 16.5rem;

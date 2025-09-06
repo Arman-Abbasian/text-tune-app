@@ -2,7 +2,7 @@ import React from 'react'
 
 type TextInputCompPropsType = {
   value: string
-  onChange: (value: string) => void
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   name: string
   className?: string
   icon?: React.ReactNode
@@ -21,7 +21,7 @@ function TextInputComp(props: TextInputCompPropsType) {
       <input
         className="p-2 focus:outline-none hove:outline-none text-primary-700"
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={onChange}
         name={name}
         {...restProps}
       />

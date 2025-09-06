@@ -11,8 +11,9 @@ const options = [
 ]
 export default function Filters() {
   const [filters, setFilters] = useState({ type: 'all', search: '' })
-  const changeHandler = (val: string) => {
-    setFilters({ ...filters, search: val })
+  
+  const changeHandler = (e:React.ChangeEvent<HTMLInputElement>) => {
+    setFilters({ ...filters, search: e.target.value })
   }
   return (
     <div className="flex items-center gap-4">
